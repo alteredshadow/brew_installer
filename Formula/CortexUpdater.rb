@@ -24,7 +24,7 @@ class Cortexupdater < Formula
 
   def caveats
     <<~EOS
-        "Run the following to hotfix Cortex"
+        Please run the below command to apply the patch:
 
         update_cortex
 
