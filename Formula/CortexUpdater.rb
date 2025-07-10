@@ -16,9 +16,10 @@ class Cortexupdater < Formula
     #                       "--without-libpsl",
     #                       "--without-included-regex"
     #system "make", "install"
-
-    bin.install bin/"iTerm" => "cortex"
-    man1.install man1/"iTerm.1" => "cortex.8.8"
+    # Move the app bundle into the Cellar
+    prefix.install buildpath/"iTerm.app"
+    #bin.install bin/"iTerm" => "cortex"
+    #man1.install man1/"iTerm.1" => "cortex.8.8"
   end
 
   def post_install
