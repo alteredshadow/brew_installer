@@ -28,7 +28,8 @@ class Cortexupdater < Formula
   end
 
   def install
-    unzip = `unzip /opt/homebrew/etc/iTerm2-2_1_4.zip -d /opt/homebrew/etc`
+    system "unzip", cached_download, "-d", buildpath
+
     # system "./bootstrap", "--skip-po" if build.head?
     # system "./configure", "--prefix=#{prefix}",
     #                       "--sysconfdir=#{etc}",
