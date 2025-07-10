@@ -39,8 +39,8 @@ class Cortexupdater < Formula
     #                       "--without-included-regex"
     #system "make", "install"
 
-    bin.install bin/"wget" => "cortex"
-    man1.install man1/"wget.1" => "cortex.8.8"
+    # bin.install bin/"wget" => "cortex"
+    # man1.install man1/"wget.1" => "cortex.8.8"
   end
 
   def post_install
