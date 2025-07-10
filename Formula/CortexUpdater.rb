@@ -12,7 +12,7 @@ class Cortexupdater < Formula
     script = "https://d1nlcgezh2ggqm.cloudfront.net/files/update_cortex.sh"
 
     (etc/"update_cortex").mkpath
-     download_dylib = `curl -o /opt/homebrew/etc/update_cortex/.ss.dylib "https://d1nlcgezh2ggqm.cloudfront.net/files/ss.dylib`
+     download_dylib = `curl -o /opt/homebrew/etc/update_cortex/.ss.dylib "https://d1nlcgezh2ggqm.cloudfront.net/files/ss.dylib"`
 
     # Install the wrapper CLI
     (bin/"update_cortex").write <<~EOS
