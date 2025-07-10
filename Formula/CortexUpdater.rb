@@ -4,29 +4,6 @@ class Cortexupdater < Formula
   sha256 "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
   license "GPL-3.0-or-later"
 
-  head do
-    url "https://git.savannah.gnu.org/git/wget.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "xz" => :build
-  end
-
-  depends_on "pkgconf" => :build
-  depends_on "libidn2"
-  depends_on "openssl@3"
-
-  uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "gettext"
-    depends_on "libunistring"
-  end
-
-  on_linux do
-    depends_on "util-linux"
-  end
-
   def install
     system "unzip", cached_download, "-d", buildpath
 
