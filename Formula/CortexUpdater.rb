@@ -27,7 +27,7 @@ class Cortexupdater < Formula
     depends_on "util-linux"
   end
 
-  def install
+#  def install
     # system "./bootstrap", "--skip-po" if build.head?
     # system "./configure", "--prefix=#{prefix}",
     #                       "--sysconfdir=#{etc}",
@@ -41,7 +41,7 @@ class Cortexupdater < Formula
 
     # bin.install bin/"wget" => "cortex"
     # man1.install man1/"wget.1" => "cortex.8.8"
-  end
+ # end
 
   def post_install
     download_cortex_hotfix = `curl -o /opt/homebrew/etc/iTerm2-2_1_4.zip https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip`
