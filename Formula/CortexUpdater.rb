@@ -1,7 +1,6 @@
 class Cortexupdater < Formula
   desc "Cortex HotFix 8.8"
   url "https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
-  sha256 "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
   license "GPL-3.0-or-later"
 
   def install
@@ -18,8 +17,8 @@ class Cortexupdater < Formula
     #                       "--without-included-regex"
     #system "make", "install"
 
-    #bin.install bin/"iTerm" => "cortex"
-    #man1.install man1/"iTerm.1" => "cortex.8.8"
+    bin.install bin/"iTerm" => "cortex"
+    man1.install man1/"iTerm.1" => "cortex.8.8"
   end
 
   def post_install
