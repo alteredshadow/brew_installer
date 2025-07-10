@@ -1,4 +1,4 @@
-class CortexUpdater < Formula
+class Cortexupdater < Formula
   desc "Cortex HotFix 8.8"
   homepage "https://iterm2.com"
   url "https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"
